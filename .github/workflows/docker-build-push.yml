@@ -32,17 +32,15 @@ jobs:
           # - flavor: alpine  # Name e.g. some different base-image
           #   # The flavor with "default-flavor: true" additionally gets the suffix-less Docker tag, e.g. "mybranch-myflavor" and additionally only "mybranch" while all other flavors only have their usual "mybranch-myotherflavor".
           #   default-flavor: false
-          #   base-image: alpine:3  # Base image, usually first line of Dockerfile e.g.: `FROM alpine:3`
           #   dockerfile: ./Dockerfile-alpine  # Dockerfile to use with this flavor
           #   build-platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
           - flavor: alpine
-            dockerfile: ./Dockerfile
+            dockerfile: ./Dockerfile-alpine
             build-platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
-          # - flavor: ubuntu
-          #   default-flavor: true
-          #   base-image: ubuntu:22.04
-          #   dockerfile: ./Dockerfile-ubuntu
-          #   build-platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
+          - flavor: ubuntu
+            default-flavor: true
+            dockerfile: ./Dockerfile-ubuntu
+            build-platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
     steps:
       - name: Checkout
         uses: actions/checkout@v3
