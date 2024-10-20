@@ -21,7 +21,7 @@ env:
   TARGET_IMAGE: ${{ github.repository }}  # only if username + repository is all lowercase and the same as user + repo on Docker Hubs
 
 jobs:
-  release:
+  build:
     name: Build ${{ matrix.flavor }}
     runs-on: ubuntu-latest
     strategy:
