@@ -1,4 +1,4 @@
-FROM alpine:3.22.2@sha256:265b17e252b9ba4c7b7cf5d5d1042ed537edf6bf16b66130d93864509ca5277f
+FROM alpine:3.23.0@sha256:51183f2cfa6320055da30872f211093f9ff1d3cf06f39a0bdb212314c5dc7375
 
 #RUN apk add bash=5.2.21-r0  # this breaks on alpine:3.20.x
 
